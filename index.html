@@ -1,17 +1,155 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>我的个人博客</title>
+  <meta charset="UTF-8">
+  <title>个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --背景色: #0f172a;
+      --卡片色: #111827;
+      --文字色: #e5e7eb;
+      --次要文字: #9ca3af;
+      --强调色: #38bdf8;
+      --边框色: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "微软雅黑", "Segoe UI", sans-serif;
+      background: var(--背景色);
+      color: var(--文字色);
+      line-height: 1.8;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--边框色);
+    }
+
+    .导航栏 {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .导航栏 a {
+      color: var(--次要文字);
+      margin-left: 24px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .导航栏 a:hover {
+      color: var(--强调色);
+    }
+
+    .容器 {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 24px;
+    }
+
+    .标题区 h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .标题区 p {
+      color: var(--次要文字);
+      max-width: 620px;
+    }
+
+    .文章区 {
+      margin-top: 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .文章卡片 {
+      background: var(--卡片色);
+      border: 1px solid var(--边框色);
+      border-radius: 14px;
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .文章卡片:hover {
+      transform: translateY(-6px);
+      border-color: var(--强调色);
+    }
+
+    .文章卡片 h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .文章卡片 p {
+      color: var(--次要文字);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--次要文字);
+      border-top: 1px solid var(--边框色);
+      margin-top: 80px;
+    }
+
+    @media (max-width: 600px) {
+      .标题区 h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>欢迎来到我的个人博客</h1>
 
-    <h2>导航</h2>
-    <ul>
-        <li><a href="index.html">首页</a></li>
-        <li><a href="about.html">关于我</a></li>
-        <li><a href="blog.html">博客</a></li>
-    </ul>
+<header>
+  <div class="导航栏">
+    <strong>个人博客</strong>
+    <div>
+      <a href="index.html">首页</a>
+      <a href="posts.html">文章</a>
+      <a href="about.html">关于</a>
+    </div>
+  </div>
+</header>
+
+<main class="容器">
+  <section class="标题区">
+    <h1>记录 · 思考 · 技术</h1>
+  </section>
+
+  <section class="文章区">
+    <div class="文章卡片">
+      <h3>使用 GitHub Pages 搭建博客</h3>
+      <p>从零部署一个静态博客网站的完整流程与注意事项。</p>
+    </div>
+
+    <div class="文章卡片">
+      <h3>学习与实验记录</h3>
+      <p>课程实验、学习笔记以及阶段性反思。</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 · 基于 GitHub Pages 构建
+</footer>
+
 </body>
 </html>
